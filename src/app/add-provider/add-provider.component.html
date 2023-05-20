@@ -1,1 +1,20 @@
-<p>add-provider works!</p>
+<h1 align="center">{{titre}}</h1>
+<img [src]="imgPLus" width="25px">
+
+<form #data="ngForm" (ngSubmit)=" persistProvider(data.value)">
+
+    Name: <input type="text" ngModel class="form-control" name="name"/>
+
+    Address: <input type="text" ngModel class="form-control" name="address"/>
+
+    Email: <input type="text" ngModel class="form-control" name="email"/>
+
+
+<button type="Submit"  class="btn btn-primary" value="Ajouter" style:margin-top="5px">Ajouter<i style:margin-left="5px"class="fa fa-plus" aria-hidden="true"></i></button>
+
+
+
+
+</form>
+<h3>Example Two a way data binding </h3>
+Taper un mot:<input type="text"[(ngModel)]="formation"/>{{formation}}

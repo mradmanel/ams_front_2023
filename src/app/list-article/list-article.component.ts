@@ -9,9 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./list-article.component.css']
 })
 export class ListArticleComponent implements OnInit {
-  articles: any;
+ articles:any;
   constructor(private service: ArticleService, private router: Router) { }
-  ngOnInit() {
+     ngOnInit() {
     this.service.listArticles().subscribe(response => {
       this.articles = response;
     });

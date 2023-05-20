@@ -4,30 +4,24 @@ import { HttpClient } from '@angular/common/http';
     providedIn:'root'
 })
 export class ArticleService {
-  urlArticles = 'http://127.0.0.1:8080/articles';
-  article: any;
+  urlArticles = 'http://127.0.0.1:8080/articles/';
+ 
   constructor(private Http: HttpClient) { }
-  listArticles() {
-    return this.Http.get(this.urlArticles + '/list');
+   listArticles() {
+    return this.Http.get(this.urlArticles + 'list');
     }
-    deleteArticle(id:any) {
-      return this.Http.delete(this.urlArticles + id);
+    deleteArticle(idarticle :any) {
+      return this.Http.delete(this.urlArticles + idarticle);
       }
-      getArticle(id:any) {
-      return this.Http.get(this.urlArticles  + id);
-  }
-   /* updateArticle(id: any) {
-    return this.Http.put(this.urlArticles + id);
-    }*/
-    
-   /* createProvider(myform:any) {
-    this.article = {
-    'label': myform.value.articleLabel,
-    'price': myform.value.articlePrice,
-    'picture': myform.value.articlePicture
+    getArticle(idarticle: any) {
+      return this.Http.get(this.urlArticles  + idarticle);
     }
-    return this.Http.post(this.urlArticles + '/add', this.article);
-    }*/
+    updateArticle(article: any) {
+    return this.Http.put(this.urlArticles + article['id'],article);
+    }
     
+   createArticle(article:any) {
+    return this.Http.post(this.urlArticles+'add/', article);
+    }
+  }
    
-}

@@ -15,22 +15,22 @@ this.service.listProviders().subscribe(
     this.providers = response;
   }
   );}
-  deleteProvider(id :any) {
+  
+  deleteProvider(id:any) {
     //console.log(this.provider);
     this.service.deleteProvider(id).subscribe(response => {
-    console.log(response);
-    this.refreshListProviders();
-    })
-    }
-    refreshListProviders() {
-    this.service.listProviders().subscribe(
-    response => {
-    this.providers = response;
-    }
-    );
-    }
-    
-    updateProvider(id :any) {
-    this.router.navigate(['updateProvider' + '/' + ['id']]);
-    }
-  }
+      console.log(response);
+       this.refreshListProviders();
+       })
+}
+refreshListProviders() {
+this.service.listProviders().subscribe(
+response => {
+this.providers = response;
+}
+);
+}
+updateProvider(id :any){
+this.router.navigate(['updateProvider'+'/' +'id']);
+}
+}

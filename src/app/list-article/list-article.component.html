@@ -11,11 +11,9 @@
 <tr *ngFor="let article of articles">
 <td>{{article.id}}</td>
 <td>{{article.label}}</td>
+<td>{{article.price}}</td>
 <td>{{article.picture}}</td>
-<td><button (click)="deleteArticle(article)" class="btn btn-danger">Supprimer</button></td>
-
-<td><button (click)="updateArticle(article)" class="btn btn-warning">Modifier</button></td>
-
-
+<td><button (click)="deleteArticle(article.id)" class="btn btn-danger">Supprimer</button></td>
+<td><button (click)="updateArticle(article.id)" class="btn btn-warning">Modifier</button></td>
 </tr>
 </table>

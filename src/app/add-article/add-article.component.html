@@ -1,1 +1,14 @@
-<p>add-article works!</p>
+<h1 align="center">{{titre}}</h1>
+<img [src]="imgPLus" width="25px">
+
+<form #data="ngForm" (ngSubmit)=" persistArticle(data.value)">
+
+    Label: <input type="text" ngModel class="form-control" name="label"/>
+
+   Price: <input type="text" ngModel class="form-control" name="price"/>
+
+   Picture: <input type="text" ngModel class="form-control" name="picture"/>
+
+    <Button type="Submit"  class="btn btn-primary" value="Ajouter" style:margin-top="5px">Ajouter</Button>
+
+</form>
