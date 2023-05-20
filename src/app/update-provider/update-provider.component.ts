@@ -16,11 +16,10 @@ export class UpdateProviderComponent implements OnInit{
     this.activeRoute.paramMap.subscribe(
     params => {
     this.id = params.get('id');
-    alert(this.id);
+    //alert(this.id);
     }
     );
-
-  
+    
     this.service.getProvider(this.id).subscribe(
       (provider:any) => {
       //console.log(response);
